@@ -1,395 +1,322 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KBIDO — Kesate Berhan Integrated Developmental Organization</title>
-<meta name="description" content="Kesate Berhan Integrated Developmental Organization (KBIDO) — a board-led, church-rooted nonprofit in Mekelle, Tigray, working for peace, ethical leadership, and human flourishing.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#173b35">
+<title>KBIDO | Kesate Berhan Integrated Developmental Organization</title>
+<meta name="description" content="Kesate Berhan Integrated Developmental Organization (KBIDO), a church-rooted, board-led non-profit association in Mekelle, Tigray, working for peace, ethical leadership and human development.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="KBIDO | Faith, service and community development">
+<meta property="og:description" content="Faith-rooted service and practical community action for peace, dignity and human development in Tigray.">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%23173b35'/%3E%3Ccircle cx='20' cy='16' r='7' fill='%23d8aa58'/%3E%3Cpath d='M5 31 Q20 19 35 31' fill='none' stroke='%23f7f4ed' stroke-width='2'/%3E%3C/svg%3E">
 <style>
-  :root{
-    --bg:#F3EFE6;
-    --bg-alt:#EAE2CF;
-    --ink:#221F1A;
-    --ink-soft:#5B5646;
-    --gold:#96702C;
-    --gold-soft:#C7A25C;
-    --pine:#24443F;
-    --pine-soft:#3A6259;
-    --brick:#7A3428;
-    --line: rgba(34,31,26,0.14);
-    --paper: #FBF9F3;
-    --max: 1120px;
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--bg);
-    color:var(--ink);
-    font-family:'Inter',sans-serif;
-    -webkit-font-smoothing:antialiased;
-    line-height:1.6;
-  }
-  h1,h2,h3,.display{
-    font-family:'Fraunces',serif;
-    font-weight:600;
-    line-height:1.08;
-    letter-spacing:-0.01em;
-    margin:0;
-  }
-  a{color:inherit;}
-  img{max-width:100%;display:block;}
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;}
-  .eyebrow{
-    font-family:'Inter',sans-serif;
-    font-size:12.5px;
-    font-weight:600;
-    letter-spacing:0.14em;
-    text-transform:uppercase;
-    color:var(--pine);
-  }
-  .eyebrow.gold{color:var(--gold);}
-
-  /* header */
-  header{
-    position:sticky; top:0; z-index:50;
-    background:rgba(243,239,230,0.88);
-    backdrop-filter:blur(8px);
-    border-bottom:1px solid var(--line);
-  }
-  .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;max-width:var(--max);margin:0 auto;}
-  .brand{display:flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-weight:600;font-size:18px;text-decoration:none;color:var(--ink);}
-  .brand-mark{width:30px;height:30px;flex:none;}
-  .nav-links{display:flex;gap:32px;list-style:none;margin:0;padding:0;font-size:14.5px;font-weight:500;}
-  .nav-links a{text-decoration:none;color:var(--ink-soft);border-bottom:1px solid transparent;padding-bottom:3px;transition:color .2s, border-color .2s;}
-  .nav-links a:hover{color:var(--pine);border-color:var(--pine-soft);}
-  .nav-cta{
-    background:var(--pine); color:var(--paper); text-decoration:none;
-    padding:10px 20px; border-radius:2px; font-size:14px; font-weight:600;
-    transition:background .2s;
-  }
-  .nav-cta:hover{background:var(--pine-soft);}
-  .menu-btn{display:none;background:none;border:none;cursor:pointer;padding:6px;}
-  .menu-btn span{display:block;width:22px;height:2px;background:var(--ink);margin:5px 0;}
-
-  /* hero */
-  .hero{
-    position:relative;
-    padding:88px 0 76px;
-    overflow:hidden;
-    border-bottom:1px solid var(--line);
-  }
-  .hero-grid{
-    display:grid; grid-template-columns:1.15fr 0.85fr; gap:56px; align-items:center;
-  }
-  .hero h1{font-size:clamp(38px,5vw,58px);}
-  .hero h1 em{font-style:normal;color:var(--gold);}
-  .hero-sub{margin-top:22px;font-size:18px;color:var(--ink-soft);max-width:44ch;}
-  .hero-actions{margin-top:34px;display:flex;gap:16px;flex-wrap:wrap;}
-  .btn{
-    display:inline-flex;align-items:center;gap:8px;
-    padding:14px 26px;border-radius:2px;font-weight:600;font-size:14.5px;
-    text-decoration:none;transition:transform .18s ease, box-shadow .18s ease;
-  }
-  .btn-primary{background:var(--pine);color:var(--paper);}
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(36,68,63,0.28);}
-  .btn-ghost{border:1px solid var(--line);color:var(--ink);}
-  .btn-ghost:hover{border-color:var(--pine);color:var(--pine);}
-  .hero-art{width:100%;height:auto;}
-
-  .hero-tagline{
-    margin-top:56px;padding-top:28px;border-top:1px solid var(--line);
-    display:flex;gap:40px;flex-wrap:wrap;
-  }
-  .tagline-item{max-width:260px;}
-  .tagline-item .num{font-family:'Fraunces',serif;font-size:26px;color:var(--gold);display:block;margin-bottom:4px;}
-  .tagline-item p{margin:0;font-size:13.5px;color:var(--ink-soft);}
-
-  section{padding:92px 0;}
-  .section-head{max-width:640px;margin-bottom:52px;}
-  .section-head h2{font-size:clamp(28px,3.4vw,38px);margin-top:14px;}
-  .section-head p{margin-top:16px;color:var(--ink-soft);font-size:16.5px;}
-
-  /* about + vision/mission */
-  .about{background:var(--paper);border-bottom:1px solid var(--line);}
-  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
-  .about-body p{color:var(--ink-soft);font-size:16.5px;margin:0 0 18px;}
-  .about-body p:last-child{margin-bottom:0;}
-  .vm-stack{display:flex;flex-direction:column;gap:1px;background:var(--line);border:1px solid var(--line);}
-  .vm-card{background:var(--paper);padding:32px;}
-  .vm-card h3{font-size:20px;color:var(--pine);margin-bottom:12px;}
-  .vm-card p{margin:0;color:var(--ink-soft);font-size:15.5px;}
-
-  /* work / intervention areas */
-  .work{background:var(--bg);}
-  .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
-  .work-card{background:var(--paper);padding:34px 30px;min-height:200px;display:flex;flex-direction:column;gap:16px;}
-  .work-icon{width:34px;height:34px;color:var(--gold);}
-  .work-card h3{font-size:17.5px;font-weight:600;font-family:'Inter',sans-serif;}
-  .work-card p{margin:0;font-size:14.5px;color:var(--ink-soft);}
-
-  /* reach / stats */
-  .reach{background:var(--pine);color:var(--paper);border-bottom:1px solid var(--line);}
-  .reach .eyebrow{color:var(--gold-soft);}
-  .reach h2{color:var(--paper);}
-  .reach-sub{color:rgba(251,249,243,0.78);margin-top:16px;max-width:56ch;font-size:16.5px;}
-  .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:56px;border-top:1px solid rgba(251,249,243,0.2);padding-top:44px;}
-  .stat{}
-  .stat .num{font-family:'Fraunces',serif;font-size:44px;color:var(--gold-soft);display:block;}
-  .stat .label{font-size:14px;color:rgba(251,249,243,0.75);margin-top:6px;}
-  .reach-zones{margin-top:44px;font-size:14.5px;color:rgba(251,249,243,0.8);}
-  .reach-zones strong{color:var(--paper);}
-
-  /* involved */
-  .involve{background:var(--paper);}
-  .involve-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);}
-  .involve-card{background:var(--paper);padding:38px;}
-  .involve-card h3{font-family:'Inter',sans-serif;font-size:16px;font-weight:700;margin-bottom:10px;}
-  .involve-card p{margin:0 0 18px;color:var(--ink-soft);font-size:15px;}
-  .fill-note{
-    display:inline-block;font-size:12.5px;font-weight:600;color:var(--brick);
-    background:rgba(122,52,40,0.08);padding:3px 9px;border-radius:2px;margin-bottom:14px;
-  }
-  .contact-line{font-size:15px;margin:6px 0;}
-  .contact-line span{color:var(--ink-soft);}
-
-  footer{background:var(--ink);color:rgba(251,249,243,0.7);padding:48px 0 34px;}
-  .footer-grid{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px;}
-  .footer-brand{font-family:'Fraunces',serif;color:var(--paper);font-size:19px;}
-  .footer-note{font-size:13px;max-width:44ch;margin-top:10px;line-height:1.6;}
-  .footer-meta{font-size:12.5px;text-align:right;}
-
-  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease;}
-  .reveal.in{opacity:1;transform:translateY(0);}
-
-  @media (max-width:860px){
-    .nav-links,.nav-cta{display:none;}
-    .menu-btn{display:block;}
-    .hero-grid,.about-grid,.involve-grid{grid-template-columns:1fr;}
-    .work-grid{grid-template-columns:1fr;}
-    .stat-row{grid-template-columns:1fr;gap:24px;}
-    .hero-tagline{gap:28px;}
-    .footer-grid{flex-direction:column;}
-    .footer-meta{text-align:left;}
-  }
-  @media (prefers-reduced-motion: reduce){
-    html{scroll-behavior:auto;}
-    .reveal{opacity:1;transform:none;transition:none;}
-  }
+@font-face{font-family:Inter;src:url('fonts/inter-400.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:Inter;src:url('fonts/inter-600.woff2') format('woff2');font-weight:600;font-display:swap}
+@font-face{font-family:Fraunces;src:url('fonts/fraunces-600.woff2') format('woff2');font-weight:600;font-display:swap}
+@font-face{font-family:GeezSans;src:url('fonts/geez-sans-400.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:GeezSans;src:url('fonts/geez-sans-600.woff2') format('woff2');font-weight:600;font-display:swap}
+@font-face{font-family:GeezSerif;src:url('fonts/geez-serif-700.woff2') format('woff2');font-weight:700;font-display:swap}
+:root{--forest:#173b35;--forest2:#24554b;--gold:#d8aa58;--gold-dark:#80601e;--ink:#22231f;--muted:#5b6059;--paper:#f7f5ef;--white:#fffefa;--sage:#e9eee8;--line:#d9ddd5;--max:1160px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.7 Inter,GeezSans,Arial,sans-serif}
+html[lang=ti] body{font-family:GeezSans,Inter,sans-serif;line-height:1.95}
+h1,h2,h3{font-family:Fraunces,GeezSerif,Georgia,serif;line-height:1.16;margin:0;font-weight:600}
+html[lang=ti] h1,html[lang=ti] h2,html[lang=ti] h3{font-family:GeezSerif,GeezSans,serif;line-height:1.42;font-weight:700}
+a{color:inherit}
+button{font:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+.wrap{width:min(var(--max),calc(100% - 48px));margin-inline:auto}
+.skip{position:absolute;top:-60px;left:12px;background:var(--gold);color:var(--forest);padding:10px 16px;z-index:100}
+.skip:focus{top:12px}
+header{position:sticky;top:0;z-index:50;background:rgba(23,59,53,.97);color:var(--paper);box-shadow:0 2px 16px #102a251a}
+.nav{min-height:76px;display:flex;align-items:center;gap:26px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;font:600 21px Fraunces,serif;letter-spacing:.03em}
+.brand-mark{width:36px;height:36px;flex:none}
+.nav-links{display:flex;align-items:center;gap:25px;list-style:none;margin:0 auto;padding:0}
+.nav-links a{text-decoration:none;color:#f7f5efdc;font-size:14px}
+.nav-links a:hover{color:var(--gold)}
+.nav-actions{display:flex;align-items:center;gap:12px}
+.lang{display:flex;border:1px solid #ffffff65;border-radius:99px;overflow:hidden}
+.lang button{border:0;background:transparent;color:var(--paper);padding:7px 11px;font-size:13px;cursor:pointer}
+html[lang=en] .lang [data-lang=en],html[lang=ti] .lang [data-lang=ti]{background:var(--gold);color:var(--forest);font-weight:600}
+.menu-btn{display:none;border:1px solid #ffffff55;background:transparent;color:white;border-radius:8px;padding:8px 10px;cursor:pointer}
+.hero{background:linear-gradient(118deg,#173b35 0%,#24554b 72%,#2d6256 100%);color:var(--paper);position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;width:540px;height:540px;border:1px solid #d8aa5840;border-radius:50%;right:-100px;top:-250px;box-shadow:0 0 0 48px #d8aa5810,0 0 0 96px #d8aa580a}
+.hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1.25fr .75fr;align-items:center;gap:50px;padding-block:104px 96px}
+.eyebrow{display:inline-block;color:var(--gold-dark);font-size:12px;font-weight:600;letter-spacing:.13em;text-transform:uppercase}
+.hero .eyebrow{color:#f0c875}
+.hero h1{font-size:clamp(38px,5.4vw,66px);max-width:14ch;margin-top:18px;letter-spacing:-.02em}
+html[lang=ti] .hero h1{max-width:18ch;font-size:clamp(34px,4.7vw,57px)}
+.hero p{font-size:18px;color:#f7f5efdc;max-width:59ch;margin:25px 0 0}
+.hero-art{width:100%;max-width:410px;justify-self:end}
+.actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:34px}
+.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border-radius:4px;padding:13px 22px;font-weight:600;font-size:14px;transition:transform .18s,background .18s}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--gold);color:var(--forest)}
+.btn-outline{border:1px solid #f7f5ef9c;color:var(--paper)}
+.btn-outline:hover{background:#ffffff12}
+section{padding:88px 0}
+.section-head{max-width:720px;margin-bottom:42px}
+.section-head h2{font-size:clamp(30px,3.8vw,44px);margin-top:12px}
+.section-head p{color:var(--muted);margin:16px 0 0;max-width:65ch}
+.about{background:var(--white)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+.about-copy p{color:var(--muted);margin:22px 0 0}
+.vision-stack{display:grid;gap:14px}
+.vm-card{padding:27px 30px;background:var(--paper);border-left:4px solid var(--gold)}
+.vm-card h3{font-size:22px;color:var(--forest);margin-bottom:10px}
+.vm-card p{margin:0;color:var(--muted)}
+.values{background:var(--sage);padding:50px 0}
+.value-row{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.value{border-top:2px solid var(--gold);padding-top:17px}
+.value h3{font-size:20px;color:var(--forest);margin-bottom:7px}
+.value p{margin:0;color:var(--muted);font-size:14px}
+.programs{background:var(--paper)}
+.program-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.program{background:var(--white);border:1px solid var(--line);padding:27px 25px;min-height:210px}
+.program .n{font:600 14px Fraunces,serif;color:var(--gold-dark);letter-spacing:.1em}
+.program h3{font-size:21px;color:var(--forest);margin:13px 0 9px}
+.program p{margin:0;color:var(--muted);font-size:14.5px}
+.approach{background:var(--white)}
+.approach-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.approach-panel{background:var(--forest);color:var(--paper);padding:36px}
+.approach-panel h3{font-size:25px;margin-bottom:13px;color:#f0c875}
+.approach-panel p{margin:0;color:#f7f5efdc}
+.approach-list{list-style:none;margin:0;padding:0;display:grid;gap:17px}
+.approach-list li{padding-left:28px;position:relative;color:var(--muted)}
+.approach-list li:before{content:"✦";position:absolute;left:0;color:var(--gold-dark)}
+.reach{background:var(--forest);color:var(--paper)}
+.reach .eyebrow{color:#f0c875}
+.reach .section-head p{color:#f7f5efc9}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;border-top:1px solid #ffffff38;padding-top:38px}
+.stat strong{display:block;font:600 clamp(38px,5vw,58px)/1.1 Fraunces,serif;color:#f0c875}
+.stat span{display:block;color:#f7f5efcf;font-size:14px;margin-top:9px;max-width:31ch}
+.reach-note{margin-top:32px;color:#f7f5efc9;font-size:14px}
+.involve{background:var(--sage)}
+.involve-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.involve-card{background:var(--white);border:1px solid var(--line);padding:30px}
+.involve-card h3{font-size:23px;color:var(--forest);margin-bottom:10px}
+.involve-card p{color:var(--muted);margin:0 0 18px}
+.contact-links{display:grid;gap:13px}
+.contact-item small{display:block;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+.contact-item a{font-weight:600;text-underline-offset:3px}
+.footer{background:#102a26;color:#f7f5efc9;padding:42px 0}
+.footer-grid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+.footer-brand{font:600 22px Fraunces,serif;color:var(--paper)}
+.footer p{font-size:13px;max-width:58ch;margin:9px 0 0}
+.footer-meta{font-size:13px;align-self:end}
+.en,.ti{display:none}
+html[lang=en] .en,html[lang=ti] .ti{display:inline}
+.block.en,.block.ti{display:none}
+html[lang=en] .block.en,html[lang=ti] .block.ti{display:block}
+html[lang=ti] .eyebrow{letter-spacing:0;font-size:13px;text-transform:none}
+@media(max-width:900px){
+ .nav{gap:12px}.nav-links{gap:14px}.nav-links a{font-size:13px}
+ .hero-inner{gap:25px}.about-grid,.approach-grid{gap:35px}
+}
+@media(max-width:760px){
+ .wrap{width:min(var(--max),calc(100% - 36px))}
+ .nav{min-height:68px}.menu-btn{display:block;margin-left:auto}
+ .nav-links{display:none;position:absolute;left:0;right:0;top:68px;background:var(--forest);padding:12px 22px 20px;flex-direction:column;align-items:stretch;gap:0}
+ .nav-links.open{display:flex}.nav-links a{display:block;padding:12px 4px;font-size:16px}
+ .hero-inner{grid-template-columns:1fr;padding-block:70px 68px}
+ .hero-art{max-width:230px;justify-self:center;grid-row:1}
+ .hero h1{font-size:clamp(36px,10vw,50px)}
+ section{padding:66px 0}
+ .about-grid,.approach-grid,.involve-grid{grid-template-columns:1fr}
+ .value-row,.program-grid,.stats{grid-template-columns:1fr}
+ .value-row{gap:20px}.program-grid{gap:12px}.program{min-height:0}
+ .stats{gap:24px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
 </style>
 </head>
 <body>
-
+<a class="skip" href="#main"><span class="en">Skip to content</span><span class="ti">ናብ ትሕዝቶ ሕለፍ</span></a>
 <header>
-  <nav class="nav">
-    <a href="#top" class="brand">
-      <svg class="brand-mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="19" stroke="#96702C" stroke-width="1.4"/>
-        <path d="M6 26C11 18 15 14 20 14C25 14 29 18 34 26" stroke="#24443F" stroke-width="1.6" stroke-linecap="round"/>
-        <circle cx="20" cy="13" r="4" fill="#96702C"/>
-      </svg>
-      KBIDO
-    </a>
-    <ul class="nav-links">
-      <li><a href="#about">Organization</a></li>
-      <li><a href="#work">What We Do</a></li>
-      <li><a href="#reach">Our Reach</a></li>
-      <li><a href="#involve">Get Involved</a></li>
-    </ul>
-    <a href="#involve" class="nav-cta">Partner With Us</a>
-    <button class="menu-btn" aria-label="Toggle menu" id="menuBtn"><span></span><span></span><span></span></button>
-  </nav>
-</header>
-
-<main id="top">
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <span class="eyebrow gold">Mekelle, Tigray · Established 2025</span>
-        <h1 style="margin-top:16px;">Faith and practical action, rebuilding <em>human flourishing</em> in Tigray.</h1>
-        <p class="hero-sub">Kesate Berhan – Integrated Developmental Organization (KBIDO) is a board-led nonprofit founded under the auspices of the Tigray Orthodox Church St. Frumentius Theological College, uniting spiritual principles with community action in post-conflict Tigray.</p>
-        <div class="hero-actions">
-          <a href="#work" class="btn btn-primary">See Our Work</a>
-          <a href="#involve" class="btn btn-ghost">Contact KBIDO</a>
-        </div>
-        <div class="hero-tagline">
-          <div class="tagline-item"><span class="num">03</span><p>Core staff members leading operations from Mekelle</p></div>
-          <div class="tagline-item"><span class="num">50+</span><p>Active volunteers across psychology, theology, education, and social work</p></div>
-          <div class="tagline-item"><span class="num">All</span><p>Zones of Tigray reached through volunteers and church partnerships</p></div>
-        </div>
-      </div>
-      <div>
-        <!-- signature motif: dawn light rising over highland hills — "Berhan" = light -->
-        <svg class="hero-art" viewBox="0 0 420 460" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <radialGradient id="glow" cx="50%" cy="32%" r="55%">
-              <stop offset="0%" stop-color="#C7A25C" stop-opacity="0.9"/>
-              <stop offset="100%" stop-color="#C7A25C" stop-opacity="0"/>
-            </radialGradient>
-            <linearGradient id="hillFar" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#3A6259"/>
-              <stop offset="100%" stop-color="#24443F"/>
-            </linearGradient>
-          </defs>
-          <circle cx="210" cy="150" r="150" fill="url(#glow)"/>
-          <circle cx="210" cy="150" r="46" fill="#96702C"/>
-          <g stroke="#C7A25C" stroke-width="2" stroke-linecap="round" opacity="0.85">
-            <line x1="210" y1="70" x2="210" y2="40"/>
-            <line x1="150" y1="90" x2="130" y2="66"/>
-            <line x1="270" y1="90" x2="290" y2="66"/>
-            <line x1="120" y1="150" x2="90" y2="150"/>
-            <line x1="300" y1="150" x2="330" y2="150"/>
-          </g>
-          <path d="M0 300C60 260 100 320 160 290C220 260 250 310 310 285C350 268 380 300 420 285V460H0V300Z" fill="url(#hillFar)" opacity="0.55"/>
-          <path d="M0 360C70 320 130 370 200 340C260 314 300 360 360 335C390 322 405 340 420 335V460H0V360Z" fill="#24443F"/>
-          <g opacity="0.9">
-            <path d="M150 460V400C150 388 158 380 168 380C178 380 186 388 186 400V460" stroke="#F3EFE6" stroke-width="2.5"/>
-            <path d="M162 400H174" stroke="#F3EFE6" stroke-width="2"/>
-            <line x1="168" y1="380" x2="168" y2="366" stroke="#F3EFE6" stroke-width="2.5"/>
-            <line x1="160" y1="372" x2="176" y2="372" stroke="#F3EFE6" stroke-width="2.5"/>
-          </g>
-        </svg>
-      </div>
-    </div>
-  </section>
-
-  <section class="about" id="about">
-    <div class="wrap about-grid">
-      <div class="reveal">
-        <span class="eyebrow">Who We Are</span>
-        <h2 style="margin-top:14px;">Organization, vision, and mission</h2>
-        <div class="about-body" style="margin-top:26px;">
-          <p>Kesate Berhan – Integrated Developmental Organization (KBIDO) is a board-led, non-profit association established in 2025 and headquartered in Mekelle, Tigray. Founded under the auspices of the Tigray Orthodox Church St. Frumentius Theological College, we unite spiritual principles with practical community action to foster human flourishing in post-conflict Tigray.</p>
-        </div>
-      </div>
-      <div class="vm-stack reveal">
-        <div class="vm-card">
-          <h3>Vision</h3>
-          <p>A peaceful and just Tigray where individuals and communities live with dignity, resilience, and collective human flourishing.</p>
-        </div>
-        <div class="vm-card">
-          <h3>Mission</h3>
-          <p>To promote sustainable peace, ethical leadership, and human development — providing psychological, ethical, and civic education; empowering vulnerable populations toward self-reliance and dignity; and mobilizing resources and partnerships for holistic community recovery and inclusive development.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="work" id="work">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow gold">What We Do</span>
-        <h2>Five intervention areas, one purpose</h2>
-        <p>KBIDO's programs are carried out through volunteers and church partnerships spanning every zone of Tigray.</p>
-      </div>
-      <div class="work-grid reveal">
-        <div class="work-card">
-          <svg class="work-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.5-7-10a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 5.5-7 10-7 10l-4 0z"/></svg>
-          <h3>Psychosocial Support</h3>
-          <p>Care for individuals and families carrying the psychological weight of conflict and displacement.</p>
-        </div>
-        <div class="work-card">
-          <svg class="work-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 3 6v6c0 5 4 8 9 10 5-2 9-5 9-10V6l-9-4z"/></svg>
-          <h3>Peacebuilding</h3>
-          <p>Community-level reconciliation work rooted in shared dignity and long-term social recovery.</p>
-        </div>
-        <div class="work-card">
-          <svg class="work-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3 2 8l10 5 10-5-10-5zM6 12v5c0 2 3 4 6 4s6-2 6-4v-5"/></svg>
-          <h3>Ethical &amp; Civic Education</h3>
-          <p>Programs in ethical leadership and civic responsibility for the next generation of community leaders.</p>
-        </div>
-        <div class="work-card">
-          <svg class="work-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="6" r="3"/><path d="M5 21v-3a4 4 0 0 1 4-4h1M19 21v-3a4 4 0 0 0-4-4h-1"/><circle cx="19" cy="10" r="2"/></svg>
-          <h3>Disability Inclusion</h3>
-          <p>Working to ensure people with disabilities are fully included in community life and recovery.</p>
-        </div>
-        <div class="work-card">
-          <svg class="work-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22V12M12 12 5 5M12 12l7-7M5 5c0 4 3 7 7 7M19 5c0 4-3 7-7 7"/></svg>
-          <h3>Sustainable Livelihoods</h3>
-          <p>Helping vulnerable populations build durable, self-reliant income and livelihood pathways.</p>
-        </div>
-        <div class="work-card" style="justify-content:center;">
-          <p style="color:var(--pine);font-family:'Fraunces',serif;font-size:17px;font-style:normal;">Carried out with volunteers whose expertise spans psychology, theology, education, social work, and community development.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="reach" id="reach">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">Staff Capacity &amp; Reach</span>
-        <h2>Small core team, wide community network</h2>
-        <p class="reach-sub">KBIDO operates with a lean core team supported by a large volunteer base with deep humanitarian, peacebuilding, and community development experience — including with national and international NGOs.</p>
-      </div>
-      <div class="stat-row reveal">
-        <div class="stat"><span class="num">3</span><span class="label">Core staff members based in Mekelle</span></div>
-        <div class="stat"><span class="num">50+</span><span class="label">Active volunteers across five fields of expertise</span></div>
-        <div class="stat"><span class="num">All Zones</span><span class="label">Of Tigray, reached through volunteers and church partnerships</span></div>
-      </div>
-      <p class="reach-zones">Head office: <strong>Mekelle, Tigray</strong>. Community presence maintained through volunteer networks and church partnerships across the region.</p>
-    </div>
-  </section>
-
-  <section class="involve" id="involve">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow gold">Get Involved</span>
-        <h2>Partner with, support, or reach KBIDO</h2>
-      </div>
-      <div class="involve-grid reveal">
-        <div class="involve-card">
-          <h3>Contact</h3>
-          <p class="contact-line"><span>Office —</span> Mekelle, Tigray, Ethiopia</p>
-          <p class="contact-line"><span>Email —</span> bebeageher@gmail.com</p>
-          <p class="contact-line"><span>Phone —</span> +251 91 421 0102</p>
-        </div>
-        <div class="involve-card">
-          <h3>Ways to Partner</h3>
-          <p>Church and diocesan partnerships, volunteer placements, and collaboration with national or international NGOs working in psychosocial support, peacebuilding, and community recovery in Tigray.</p>
-          <span class="fill-note">Add a donation or volunteer sign-up link here</span>
-        </div>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="wrap footer-grid">
-    <div>
-      <div class="footer-brand">KBIDO</div>
-      <p class="footer-note">Kesate Berhan – Integrated Developmental Organization. Founded 2025, Mekelle, Tigray, under the auspices of the Tigray Orthodox Church St. Frumentius Theological College.</p>
-    </div>
-    <div class="footer-meta">
-      <div>© <span id="year"></span> KBIDO</div>
-      <div>Mekelle, Tigray, Ethiopia</div>
-    </div>
+ <nav class="wrap nav" aria-label="Main navigation">
+  <a class="brand" href="#home" aria-label="KBIDO home">
+   <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="none" stroke="#d8aa58" stroke-width="1.5"/><circle cx="20" cy="15" r="6" fill="#d8aa58"/><path d="M5 30 Q20 18 35 30" fill="none" stroke="#f7f5ef" stroke-width="1.8"/></svg>
+   KBIDO
+  </a>
+  <ul class="nav-links" id="navLinks">
+   <li><a href="#about"><span class="en">About</span><span class="ti">ብዛዕባና</span></a></li>
+   <li><a href="#programs"><span class="en">Our work</span><span class="ti">እንገብሮ ስራሕ</span></a></li>
+   <li><a href="#approach"><span class="en">Our approach</span><span class="ti">ኣተሓሕዛና</span></a></li>
+   <li><a href="#reach"><span class="en">Our capacity</span><span class="ti">ዓቕምና</span></a></li>
+   <li><a href="#contact"><span class="en">Contact</span><span class="ti">ርኸቡና</span></a></li>
+  </ul>
+  <div class="nav-actions">
+   <div class="lang" role="group" aria-label="Choose language">
+    <button type="button" data-lang="en" lang="en" aria-pressed="true">EN</button>
+    <button type="button" data-lang="ti" lang="ti" aria-pressed="false">ትግርኛ</button>
+   </div>
+   <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks" aria-label="Open navigation menu">☰</button>
   </div>
+ </nav>
+</header>
+<main id="main">
+<section class="hero" id="home">
+ <div class="wrap hero-inner">
+  <div>
+   <span class="eyebrow"><span class="en">Mekelle, Tigray, Ethiopia · Established 2025</span><span class="ti">መቐለ፡ ትግራይ፡ ኢትዮጵያ · ዝተመስረተ 2018 ዓ.ም.</span></span>
+   <h1><span class="en">Faith expressed through service. Hope strengthened through action.</span><span class="ti">እምነት ብኣገልግሎት፡ ተስፋ ብተግባር ይግለጽ።</span></h1>
+   <p><span class="en">Kesate Berhan Integrated Developmental Organization (KBIDO) is a board-led, non-profit association established under the auspices of St. Frumentius Theological College of the Tigray Orthodox Church. We bring spiritual principles into practical community action to promote peace, dignity and human development in Tigray.</span><span class="ti">ከሣቴ ብርሃን ዝተወሃሃደ ልምዓታዊ ትካል (KBIDO)፡ ብቦርድ ዝምራሕ፡ ንትርፊ ዘይሰርሕ ማሕበር ኮይኑ፡ ብደገፍ ናይ ቤተ ክርስቲያን ኦርቶዶክስ ትግራይ ቅዱስ ፍሩምንጦስ ኮሌጅ ስነ-መለኮት ኣብ 2025 ዝተመስረተ እዩ። መንፈሳዊ መትከላት ምስ ተግባራዊ ማሕበረሰባዊ ስራሕ ብምውህሃድ፡ ሰላም፡ ክብሪ ሰብን ሰብኣዊ ልምዓትን ንምድንፋዕ ይሰርሕ።</span></p>
+   <div class="actions">
+    <a class="btn btn-primary" href="#programs"><span class="en">Explore our work</span><span class="ti">ንስራሕና ፍለጡ</span></a>
+    <a class="btn btn-outline" href="#contact"><span class="en">Get in touch</span><span class="ti">ርኸቡና</span></a>
+   </div>
+  </div>
+  <svg class="hero-art" viewBox="0 0 420 430" role="img" aria-label="Abstract sunrise over hills, symbolizing hope and light">
+   <defs><radialGradient id="sunGlow"><stop stop-color="#f0c875" stop-opacity=".7"/><stop offset="1" stop-color="#f0c875" stop-opacity="0"/></radialGradient></defs>
+   <circle cx="215" cy="155" r="150" fill="url(#sunGlow)"/><circle cx="215" cy="155" r="56" fill="#d8aa58"/>
+   <g stroke="#f0c875" stroke-width="2" stroke-linecap="round"><path d="M215 65V36M145 91l-18-22M285 91l18-22M119 155H88M311 155h31"/></g>
+   <path d="M0 280Q80 215 145 270T280 258T420 260V430H0Z" fill="#397064"/>
+   <path d="M0 330Q90 270 170 320T320 310T420 305V430H0Z" fill="#214f45"/>
+   <path d="M0 375Q95 320 190 360T420 350V430H0Z" fill="#14352f"/>
+   <path d="M202 430v-72q0-18 18-18t18 18v72M211 359h18M220 340v-24M210 328h20" fill="none" stroke="#f7f5ef" stroke-width="2.4"/>
+  </svg>
+ </div>
+</section>
+
+<section class="about" id="about">
+ <div class="wrap about-grid">
+  <div class="about-copy">
+   <span class="eyebrow"><span class="en">Who we are</span><span class="ti">መን ኢና</span></span>
+   <h2 style="font-size:clamp(30px,3.8vw,44px);margin-top:12px"><span class="en">A church-rooted organization serving the wider community</span><span class="ti">ኣብ ቤተ ክርስቲያን ዝተመስረተ፡ ንሰፊሕ ማሕበረሰብ ዘገልግል ትካል</span></h2>
+   <p><span class="en">Kesate Berhan Integrated Developmental Organization (KBIDO) is a board-led, non-profit association established in 2025 and headquartered in Mekelle, Tigray. Founded under the auspices of St. Frumentius Theological College of the Tigray Orthodox Church, the organization brings together spiritual principles and practical community action to foster human flourishing in Tigray.</span><span class="ti">ከሣቴ ብርሃን ዝተወሃሃደ ልምዓታዊ ትካል (KBIDO)፡ ብቦርድ ዝምራሕ፡ ንትርፊ ዘይሰርሕ ማሕበር ኮይኑ፡ ኣብ 2025 ዝተመስረተን ቀንዲ ቤት ጽሕፈቱ ኣብ መቐለ፡ ትግራይ ዝርከብን እዩ። ብደገፍ ቅዱስ ፍሩምንጦስ ኮሌጅ ስነ-መለኮት ቤተ ክርስቲያን ኦርቶዶክስ ትግራይ ዝተመስረተ እዚ ትካል፡ መንፈሳዊ መትከላትን ተግባራዊ ማሕበረሰባዊ ስራሕን ብምውህሃድ፡ ሰባትን ማሕበረሰባትን ብዘላቒ መንገዲ ክዕብዩ ይሰርሕ።</span></p>
+  </div>
+  <div class="vision-stack">
+   <article class="vm-card"><h3><span class="en">Our vision</span><span class="ti">ራእይና</span></h3><p><span class="en">A peaceful and just Tigray where individuals and communities live with dignity, resilience and collective human flourishing.</span><span class="ti">ውልቀ ሰባትን ማሕበረሰባትን ብክብሪ፡ ብጽንዓትን ብሓባራዊ ሰብኣዊ ዕብየትን ዝነብሩላ፡ ሰላማዊትን ፍትሓዊትን ትግራይ።</span></p></article>
+   <article class="vm-card"><h3><span class="en">Our mission</span><span class="ti">ተልእኾና</span></h3><p><span class="en">To promote sustainable peace, ethical leadership and human development through psychological, ethical and civic education; by supporting vulnerable populations to build self-reliance and live with dignity; and by mobilizing resources and partnerships for holistic community recovery and inclusive development.</span><span class="ti">ብስነ-ልቦናዊ፡ ስነ-ምግባራዊን ዜግነታዊን ትምህርቲ፤ ኣብ ተጋላጺ ኩነታት ንዝርከቡ ሰባት ናብ ርእሰ-ምክኣልን ክብሪ ዘለዎ ህይወትን ንኽበጽሑ ብምድጋፍ፤ ከምኡ’ውን ንምሉእ ምሕዋይ ማሕበረሰብን ንኹሉ ዘሳትፍ ልምዓትን ዘድሊ ጸጋታትን ሽርክነታትን ብምንቅስቓስ፡ ዘላቒ ሰላም፡ ስነ-ምግባራዊ መሪሕነትን ሰብኣዊ ልምዓትን ምዕባይ።</span></p></article>
+  </div>
+ </div>
+</section>
+
+<section class="values">
+ <div class="wrap">
+  <div class="value-row">
+   <article class="value"><h3><span class="en">Human dignity</span><span class="ti">ክብሪ ሰብ</span></h3><p><span class="en">Recognizing the inherent worth of every person and community.</span><span class="ti">ክብሪ ነፍሲ ወከፍ ሰብን ማሕበረሰብን ምኽባር።</span></p></article>
+   <article class="value"><h3><span class="en">Resilience</span><span class="ti">ጽንዓት</span></h3><p><span class="en">Supporting people and communities to recover, adapt and move forward.</span><span class="ti">ሰባትን ማሕበረሰባትን ክሓውዩ፡ ክጸንዑን ንቕድሚት ክስጉሙን ምድጋፍ።</span></p></article>
+   <article class="value"><h3><span class="en">Collective flourishing</span><span class="ti">ሓባራዊ ዕብየት</span></h3><p><span class="en">Encouraging shared responsibility and inclusive community development.</span><span class="ti">ሓባራዊ ሓላፍነትን ንኹሉ ዘሳትፍ ማሕበረሰባዊ ልምዓትን ምትብባዕ።</span></p></article>
+  </div>
+ </div>
+</section>
+
+<section class="programs" id="programs">
+ <div class="wrap">
+  <div class="section-head">
+   <span class="eyebrow"><span class="en">Our areas of intervention</span><span class="ti">ቀንዲ ዓውድታት ስራሕና</span></span>
+   <h2><span class="en">Five areas of work, one commitment to human development</span><span class="ti">ሓሙሽተ ዓውድታት ስራሕ፡ ሓደ ተወፋይነት ንሰብኣዊ ልምዓት</span></h2>
+   <p><span class="en">The organization's primary intervention areas are psychosocial support, peacebuilding, ethical and civic education, disability inclusion and sustainable livelihoods.</span><span class="ti">ቀንዲ ዓውድታት ስራሕ እቲ ትካል፡ ስነ-ልቦናዊን ማሕበራዊን ደገፍ፡ ህንጸት ሰላም፡ ስነ-ምግባራዊን ዜግነታዊን ትምህርቲ፡ ምእታው ኣካል ጉዱኣት ኣብ ማሕበረሰባዊ ህይወት፡ ከምኡ’ውን ዘላቒ መነባብሮ እዮም።</span></p>
+  </div>
+  <div class="program-grid">
+   <article class="program"><span class="n">01 / 05</span><h3><span class="en">Psychosocial support</span><span class="ti">ስነ-ልቦናዊን ማሕበራዊን ደገፍ</span></h3><p><span class="en">Providing support to individuals and families affected by conflict, displacement and other difficult circumstances, with attention to psychological well-being and social recovery.</span><span class="ti">ብግጭት፡ ምፍንቓልን ካልኦት ኣሸገርቲ ኩነታትን ንዝተጸልዉ ውልቀ ሰባትን ስድራቤታትን፡ ንስነ-ልቦናዊ ድሕንነቶምን ማሕበራዊ ምሕዋዮምን ብምግምት ደገፍ ምሃብ።</span></p></article>
+   <article class="program"><span class="n">02 / 05</span><h3><span class="en">Peacebuilding</span><span class="ti">ህንጸት ሰላም</span></h3><p><span class="en">Encouraging dialogue, reconciliation, mutual understanding and social cohesion within communities.</span><span class="ti">ኣብ ማሕበረሰባት ዘተ፡ ዕርቂ፡ ምርድዳእን ማሕበራዊ ስኒትን ምትብባዕ።</span></p></article>
+   <article class="program"><span class="n">03 / 05</span><h3><span class="en">Ethical and civic education</span><span class="ti">ስነ-ምግባራዊን ዜግነታዊን ትምህርቲ</span></h3><p><span class="en">Promoting ethical leadership, moral responsibility, civic awareness and constructive participation in community affairs.</span><span class="ti">ስነ-ምግባራዊ መሪሕነት፡ ሞራላዊ ሓላፍነት፡ ዜግነታዊ ንቕሓትን ኣብ ማሕበረሰባዊ ጉዳያት ገንቢ ተሳትፎን ምድንፋዕ።</span></p></article>
+   <article class="program"><span class="n">04 / 05</span><h3><span class="en">Disability inclusion</span><span class="ti">ምሉእ ተሳትፎ ኣካል ጉዱኣት</span></h3><p><span class="en">Promoting the dignity, participation and inclusion of persons with disabilities in community life and development.</span><span class="ti">ክብሪ፡ ተሳትፎን ምእታውን ኣካል ጉዱኣት ኣብ ማሕበረሰባዊ ህይወትን ልምዓትን ምድንፋዕ።</span></p></article>
+   <article class="program"><span class="n">05 / 05</span><h3><span class="en">Sustainable livelihoods</span><span class="ti">ዘላቒ መነባብሮ</span></h3><p><span class="en">Supporting vulnerable communities to strengthen their capacity, pursue livelihood opportunities and move towards greater self-reliance.</span><span class="ti">ኣብ ተጋላጺ ኩነታት ዝርከቡ ማሕበረሰባት ዓቕሞም ከዕብዩ፡ ናይ መነባብሮ ዕድላት ክጥቀሙን ናብ ዝለዓለ ርእሰ-ምክኣል ክሰግሩን ምድጋፍ።</span></p></article>
+  </div>
+ </div>
+</section>
+
+<section class="approach" id="approach">
+ <div class="wrap approach-grid">
+  <div>
+   <span class="eyebrow"><span class="en">How we work</span><span class="ti">ኣገባብ ኣሰራርሓና</span></span>
+   <h2 style="font-size:clamp(30px,3.8vw,44px);margin-top:12px"><span class="en">Community action strengthened by partnership</span><span class="ti">ብሽርክነት ዝሓይል ማሕበረሰባዊ ተግባር</span></h2>
+   <ul class="approach-list" style="margin-top:25px">
+    <li><span class="en">A core team of staff members coordinates the organization's work from Mekelle.</span><span class="ti">ቀንዲ ጉጅለ ሰራሕተኛታት ካብ መቐለ ንስራሕ እቲ ትካል የወሃህድ።</span></li>
+    <li><span class="en">Volunteers contribute experience in psychology, theology, education, social work and community development.</span><span class="ti">ወለንተኛታት ኣብ ስነ-ልቦና፡ ስነ-መለኮት፡ ትምህርቲ፡ ማሕበራዊ ስራሕን ማሕበረሰባዊ ልምዓትን ዘለዎም ተሞክሮ የበርክቱ።</span></li>
+    <li><span class="en">Volunteer networks and church partnerships help maintain community connections across the zones of Tigray.</span><span class="ti">መርበባት ወለንተኛታትን ሽርክነታት ቤተ ክርስቲያንን ኣብ ዞባታት ትግራይ ምስ ማሕበረሰባት ዘሎ ርክብ ንምጽናዕ ይሕግዙ።</span></li>
+   </ul>
+  </div>
+  <aside class="approach-panel">
+   <h3><span class="en">Faith translated into service</span><span class="ti">እምነት ናብ ኣገልግሎት ክትርጎም ከሎ</span></h3>
+   <p><span class="en">KBIDO's foundation connects spiritual principles with practical community action. Its work is directed towards peace, ethical leadership, dignity, resilience and inclusive human development.</span><span class="ti">መሰረት ከሣቴ ብርሃን መንፈሳዊ መትከላት ምስ ተግባራዊ ማሕበረሰባዊ ስራሕ የራኽብ። ስራሑ ኣብ ሰላም፡ ስነ-ምግባራዊ መሪሕነት፡ ክብሪ ሰብ፡ ጽንዓትን ንኹሉ ዘሳትፍ ሰብኣዊ ልምዓትን ዘተኮረ እዩ።</span></p>
+  </aside>
+ </div>
+</section>
+
+<section class="reach" id="reach">
+ <div class="wrap">
+  <div class="section-head">
+   <span class="eyebrow"><span class="en">Our organizational capacity</span><span class="ti">ዓቕሚ ትካልና</span></span>
+   <h2><span class="en">A committed core team and a wider volunteer network</span><span class="ti">ተወፋይነት ዘለዎ ቀንዲ ጉጅለን ሰፊሕ መርበብ ወለንተኛታትን</span></h2>
+   <p><span class="en">KBIDO operates with three core staff members and is supported by more than 50 active volunteers. Many volunteers have experience working with national and international NGOs in humanitarian response, peacebuilding and community development.</span><span class="ti">ከሣቴ ብርሃን ብሰለስተ ቀንዲ ሰራሕተኛታት ይካየድ፡ ልዕሊ 50 ንጡፋት ወለንተኛታት ድማ ይድግፍዎ። ብዙሓት ካብዞም ወለንተኛታት ኣብ ሰብኣዊ ሓገዝ፡ ህንጸት ሰላምን ማሕበረሰባዊ ልምዓትን ምስ ሃገራውን ዓለምለኻውን ዘይመንግስታዊ ትካላት ዝሰርሑ ተሞክሮ ኣለዎም።</span></p>
+  </div>
+  <div class="stats">
+   <div class="stat"><strong>3</strong><span><span class="en">Core staff members based in Mekelle</span><span class="ti">ኣብ መቐለ ዝመደበሮም ቀንዲ ሰራሕተኛታት</span></span></div>
+   <div class="stat"><strong>50+</strong><span><span class="en">Active volunteers with varied professional experience</span><span class="ti">ዝተፈላለየ ሞያዊ ተሞክሮ ዘለዎም ንጡፋት ወለንተኛታት</span></span></div>
+   <div class="stat"><strong><span class="en">All zones</span><span class="ti">ኩለን ዞባታት</span></strong><span><span class="en">Community networks across Tigray through volunteers and church partnerships</span><span class="ti">ብመርበባት ወለንተኛታትን ሽርክነታት ቤተ ክርስቲያንን ኣብ ትግራይ ዝተዘርግሐ ርክባት ማሕበረሰብ</span></span></div>
+  </div>
+  <p class="reach-note"><span class="en">Head office: Mekelle, Tigray, Ethiopia.</span><span class="ti">ቀንዲ ቤት ጽሕፈት፡ መቐለ፡ ትግራይ፡ ኢትዮጵያ።</span></p>
+ </div>
+</section>
+
+<section class="involve" id="contact">
+ <div class="wrap">
+  <div class="section-head">
+   <span class="eyebrow"><span class="en">Connect with us</span><span class="ti">ምሳና ርክብ ግበሩ</span></span>
+   <h2><span class="en">Partnership begins with a conversation</span><span class="ti">ሽርክነት ብዘተ ይጅምር</span></h2>
+   <p><span class="en">KBIDO welcomes inquiries from volunteers, churches, dioceses, civil society organizations, and national or international development partners whose work aligns with its mission.</span><span class="ti">ከሣቴ ብርሃን ካብ ወለንተኛታት፡ ኣብያተ ክርስቲያናት፡ ሃገረ ስብከታት፡ ማሕበራት ሲቪላዊ ማሕበረሰብን ምስ ተልእኾኡ ዝሰማምዑ ሃገራውን ዓለምለኻውን መሻርኽቲ ልምዓትን ሕቶታትን ናይ ስራሕ ርክባትን ይቕበል።</span></p>
+  </div>
+  <div class="involve-grid">
+   <article class="involve-card">
+    <h3><span class="en">Explore collaboration</span><span class="ti">ምትሕብባር ንምጅማር</span></h3>
+    <p><span class="en">Get in touch to discuss volunteering, institutional partnership or professional collaboration.</span><span class="ti">ብዛዕባ ወለንተኛነት፡ ትካላዊ ሽርክነት ወይ ሞያዊ ምትሕብባር ንምዝታይ ርኸቡና።</span></p>
+    <a class="btn btn-primary" href="mailto:bebeageher@gmail.com?subject=Enquiry%20to%20KBIDO"><span class="en">Email KBIDO</span><span class="ti">ኢመይል ስደዱልና</span></a>
+   </article>
+   <article class="involve-card">
+    <h3><span class="en">Contact information</span><span class="ti">መራኸቢ ሓበሬታ</span></h3>
+    <div class="contact-links">
+     <div class="contact-item"><small><span class="en">Office</span><span class="ti">ቤት ጽሕፈት</span></small><span class="en">Mekelle, Tigray, Ethiopia</span><span class="ti">መቐለ፡ ትግራይ፡ ኢትዮጵያ</span></div>
+     <div class="contact-item"><small>Email</small><a href="mailto:bebeageher@gmail.com">bebeageher@gmail.com</a></div>
+     <div class="contact-item"><small><span class="en">Telephone</span><span class="ti">ተሌፎን</span></small><a href="tel:+251914210102">+251 91 421 0102</a></div>
+    </div>
+   </article>
+  </div>
+ </div>
+</section>
+</main>
+<footer class="footer">
+ <div class="wrap footer-grid">
+  <div><div class="footer-brand">KBIDO</div><p><span class="en">Kesate Berhan Integrated Developmental Organization. Faith-rooted service and practical community action for peace, dignity and human development.</span><span class="ti">ከሣቴ ብርሃን ዝተወሃሃደ ልምዓታዊ ትካል። ንሰላም፡ ክብሪ ሰብን ሰብኣዊ ልምዓትን ዝዓለመ ኣብ እምነት ዝተመስረተ ኣገልግሎትን ተግባራዊ ማሕበረሰባዊ ስራሕን።</span></p></div>
+  <div class="footer-meta"><span class="en">Mekelle, Tigray, Ethiopia</span><span class="ti">መቐለ፡ ትግራይ፡ ኢትዮጵያ</span><br>© <span id="year"></span> KBIDO. <span class="en">All rights reserved.</span><span class="ti">መሰላት ብሕጊ ዝተሓለዉ እዮም።</span></div>
+ </div>
 </footer>
-
 <script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-  const menuBtn = document.getElementById('menuBtn');
-  const navLinks = document.querySelector('.nav-links');
-  menuBtn.addEventListener('click', () => {
-    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-    navLinks.style.flexDirection = 'column';
-    navLinks.style.position = 'absolute';
-    navLinks.style.top = '64px';
-    navLinks.style.right = '28px';
-    navLinks.style.background = '#FBF9F3';
-    navLinks.style.padding = '18px 24px';
-    navLinks.style.border = '1px solid rgba(34,31,26,0.14)';
-    navLinks.style.gap = '14px';
-  });
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); } });
-  },{threshold:0.15});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+(function(){
+ const root=document.documentElement;
+ const langButtons=document.querySelectorAll('[data-lang]');
+ const menu=document.getElementById('menuBtn');
+ const links=document.getElementById('navLinks');
+ function setLanguage(lang){
+   root.lang=lang;
+   langButtons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.lang===lang)));
+   try{localStorage.setItem('kbido-language',lang)}catch(e){}
+ }
+ let saved='en';
+ try{saved=localStorage.getItem('kbido-language')||'en'}catch(e){}
+ setLanguage(saved==='ti'?'ti':'en');
+ langButtons.forEach(b=>b.addEventListener('click',()=>setLanguage(b.dataset.lang)));
+ menu.addEventListener('click',()=>{
+   const open=links.classList.toggle('open');
+   menu.setAttribute('aria-expanded',String(open));
+   menu.setAttribute('aria-label',open?'Close navigation menu':'Open navigation menu');
+ });
+ links.addEventListener('click',e=>{
+   if(e.target.closest('a')){
+     links.classList.remove('open');
+     menu.setAttribute('aria-expanded','false');
+     menu.setAttribute('aria-label','Open navigation menu');
+   }
+ });
+ document.getElementById('year').textContent=new Date().getFullYear();
+})();
 </script>
-
 </body>
 </html>
