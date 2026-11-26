@@ -4,14 +4,14 @@ This package contains the bilingual English/Tigrinya KBIDO website.
 
 ## Files
 - `index.html` — complete responsive website
-- `fonts/` — locally hosted Latin and Ethiopic fonts
+- `assets/kbido-symbol.jpg` — KBIDO emblem used in the navigation and browser tab\n- `assets/kbido-logo.jpg` — full official logo displayed in the footer\n- `fonts/` — locally hosted Latin and Ethiopic fonts
 
 ## Preview locally
 Open `index.html` in a modern browser. Keep the `fonts` folder beside it.
 
 ## Publish with GitHub Pages
 1. Back up the current repository.
-2. Upload/replace `index.html` and the complete `fonts/` folder in the repository root.
+2. Upload/replace `index.html` and upload the complete `fonts/` and `assets/` folders in the repository root.
 3. Commit the changes.
 4. In repository Settings → Pages, confirm the existing publishing source.
 5. Open the GitHub Pages URL and test the English/Tigrinya switch on desktop and mobile.
